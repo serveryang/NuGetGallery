@@ -92,7 +92,7 @@ namespace NuGetGallery
             // some security paranoia about URL hacking somehow creating e.g. open redirects
             // validate user input: explicit calls to the same validators used during Package Registrations
             // Ideally shouldn't be necessary?
-            if (!PackageIdValidator.IsValidPackageId(id ?? ""))
+            if (!Packaging.PackageIdValidator.IsValidPackageId(id ?? ""))
             {
                 return new HttpStatusCodeWithBodyResult(HttpStatusCode.BadRequest, "The format of the package id is invalid");
             }
@@ -165,7 +165,7 @@ namespace NuGetGallery
         }
 
         [HttpGet]
-        [RequireSsl]
+        //[RequireSsl]
         [ApiAuthorize]
         [ActionName("VerifyPackageKey")]
         public virtual ActionResult VerifyPackageKey(string id, string version)
@@ -191,7 +191,7 @@ namespace NuGetGallery
         }
 
         [HttpPut]
-        [RequireSsl]
+        //[RequireSsl]
         [ApiAuthorize]
         [ActionName("PushPackageApi")]
         public virtual Task<ActionResult> CreatePackagePut()
@@ -200,7 +200,7 @@ namespace NuGetGallery
         }
 
         [HttpPost]
-        [RequireSsl]
+        //[RequireSsl]
         [ApiAuthorize]
         [ActionName("PushPackageApi")]
         public virtual Task<ActionResult> CreatePackagePost()
@@ -324,7 +324,7 @@ namespace NuGetGallery
         }
 
         [HttpDelete]
-        [RequireSsl]
+        //[RequireSsl]
         [ApiAuthorize]
         [ActionName("DeletePackageApi")]
         public virtual async Task<ActionResult> DeletePackage(string id, string version)
@@ -348,7 +348,7 @@ namespace NuGetGallery
         }
 
         [HttpPost]
-        [RequireSsl]
+        //[RequireSsl]
         [ApiAuthorize]
         [ActionName("PublishPackageApi")]
         public virtual async Task<ActionResult> PublishPackage(string id, string version)

@@ -38,6 +38,10 @@ website for the NuGet client. For information about the NuGet project, visit the
     ```
     Update-Database -StartUpProjectName NuGetGallery -ConfigurationTypeName MigrationsConfiguration
     ```
+
+    ```
+    Update-Database -StartUpProjectName NuGetGallery -ConfigurationTypeName SupportRequestMigrationsConfiguration
+    ```
 If this fails, you are likely to get more useful output by passing `-Debug` than `-Verbose`.
 
 6. When working with the gallery, e-mail messages are saved to the file system (under `~/App_Data`).

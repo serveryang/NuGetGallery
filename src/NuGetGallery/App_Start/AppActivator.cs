@@ -107,7 +107,7 @@ namespace NuGetGallery
 
         private static void CloudPreStart()
         {
-            Trace.Listeners.Add(new DiagnosticMonitorTraceListener());
+            //Trace.Listeners.Add(new DiagnosticMonitorTraceListener());
         }
 
         private static void BundlingPostStart()
